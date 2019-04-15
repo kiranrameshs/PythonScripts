@@ -1,0 +1,4 @@
+BASE_PATH=C:\Users\kramesh\Desktop\PythonTK
+PROJECT_TYPE=A
+LOGGING_ENABLE=NO
+EMAIL_ADDRESS=friend@xyz.com

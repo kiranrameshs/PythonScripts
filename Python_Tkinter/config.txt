@@ -1,0 +1,9 @@
+[PATH]
+BASE_PATH=C:\Users\labadmin\Desktop\Automation\
+PROJECT_TYPE=A
+----------------------------------------------------------------------------------
+[LOGS]
+LOGGING_ENABLE=NO
+----------------------------------------------------------------------------------
+[E-MAIL]
+EMAIL_ADDRESS=friend@xyz.com
