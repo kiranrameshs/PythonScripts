@@ -1,0 +1,24 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<fieldset>
+<br>
+<legend>Update Database </legend>
+   <form name="form" method="post" action="update"> {% csrf_token %}
+    <input type="submit" value="Update Database">
+  </form> 
+<br>
+
+</fieldset>
+</div>
+
+<!--
+<body>
+<form action="submit" method="post"> {% csrf_token %}
+    <input type="text" name="info"><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+-->
+{% endblock %}

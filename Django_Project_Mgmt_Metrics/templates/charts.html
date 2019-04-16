@@ -1,0 +1,153 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+
+{# Load the tag library #}
+{#% load bootstrap3 % #}
+
+{# Load CSS and JavaScript #}
+{#% bootstrap_css % #}
+{#% bootstrap_javascript % #}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{#% bootstrap_messages % #}
+<br><br>
+<div class="container">
+  <fieldset>
+  <br>
+  <legend>Get Metrics Charts</legend>
+
+    <form name="form" method="post" action="get_charts"> {% csrf_token %}
+       <label>Select BU</label>
+       <select id=id_bu name="bu">
+           <option>FE</option>
+           <option>CDS</option>
+           <option>ME</option>
+           <option>MobE</option>
+	   <option>CORD</option>
+       </select>
+       &emsp;
+       <label>Select Project</label>
+       <select id=id_project name="project">
+           <option>CAEL</option>
+           <option>EDBH</option>
+           <option>TENBPLUS</option>
+           <option>VZDTG</option>
+           <option>VZDE</option>
+           <option>LMCOUSEIM</option>
+	   <option>DUB</option>
+       </select>
+       <br><br>
+       <label>Please Select either Board or Start and End TAG</label>
+       <br> 
+       <br> 
+       <label>Select Board</label>
+       <select id=id_board name=board>
+           <option></option>
+           <option>Edinburgh_Team1 Board</option>
+           <option>Copy of TeNBPLUS</option>
+           <option>Vz-DTG Common EnodeB Board</option>
+           <option>OrgCDS-UESim-TAF-Team-Time-Tracker</option>
+           <option>XRated Team board</option>
+           <option>LMCO_UESIM_SM_Time_Tracker</option>
+           <option>FE 3.1-Dev</option>
+           <option>FE 3.1-Dev_Time_Tracking</option>
+           <option>Vz-DTG BYOD 2017 Upgrade Board</option>
+           <option>TeNBPLUS</option>
+           <option>Vz-DTG Board</option>
+           <option>4G Intel Collab FE</option>
+           <option>XRated (Time Tracking) Board</option>
+           <option>Transponsters</option>
+           <option>Dublin_Team1</option>
+           <option>Justice League Team (Time Tracking) Board</option>
+           <option>mav</option>
+           <option>4G Intel Collab BBU</option>
+           <option>Caramel 3.0.1</option>
+           <option>Vz-DTG BYOD Support Board </option>
+           <option> Transponsters(Time Tracking) Board</option>
+           <option>LMCO-UESim-TAF-Team</option>
+           <option>Vz-DTG Nemesis Board</option>
+           <option>Vz-DTG NB-IoT Board</option>
+           <option>Test Board</option>
+           <option>Mavericks Team (Time Tracking) Board</option>
+           <option>AMIGOS</option>
+           <option>AM_3.0.1</option>
+           <option>TENBPLUS Time Tracking</option>
+           <option>IOTians </option>
+           <option> TeNB+ eICIC and Octasic (Time Tracking) Board</option>
+           <option>AMIGOS Team (Time Tracking) Board</option>
+           <option>Dev-OVSDB-Team Board</option>
+           <option>Edinburgh Board</option>
+           <option>xRated</option>
+           <option>Mavericks Team Board</option>
+           <option>TeNB+ </option>
+           <option>FlexRAN Team(Time Tracking) Board</option>
+           <option>Dublin_Team3</option>
+           <option>DUBLIN Board</option>
+           <option>FE-3.1</option>
+           <option>ACP_Support</option>
+           <option>Edinburgh_System_Team Board</option>
+           <option>LMCO_UESim Time Tracking Board</option>
+           <option>Dublin_System_Team</option>
+           <option>Vz-DTG CAT-M1 Phase2 Board</option>
+           <option>Justice League Board</option>
+           <option>Vz-DTG BYOD-OMD Board</option>
+           <option>Vz-DTG-ACP-System-Integration board</option>
+           <option>BackBenchers (Time Tracking) Board</option>
+           <option>Vz-DTG IMSLess CATM1 P1 Board</option>
+           <option>Trillium 5G KANBAN</option>
+           <option>Dev-TAP-SFC-Team Board</option>
+           <option>TeNB_QCOM_Board</option>
+           <option>Dublin_Team2</option>
+           <option>BackBenchers Team Board</option>
+           <option>Vz-DTG IMSLess CATM1 P2 Board </option>
+           <option> Edinburgh_Team2 Board</option>
+           <option>Edinburgh_Team3 Board</option>
+           <option>MyBoard</option>
+           <option>OrgCDS-UESim-Dev-Team-Time-Tracker</option>
+           <option>OrgCDS-LMCO-UESim_Board</option>
+           <option>VZ-INTEL-GCF-PORTING Board</option>
+           <option>LMCO-UESim-Dev-Team-2</option>
+           <option>TeNB LWA Board</option>
+           <option>Vz-DTG-LCCP-PI</option>
+           <option>TeNB_QCOM_V3.2</option>
+           <option>DreamBuilders</option>
+           <option>Caramel 3.1 CF Board</option>
+           <option>AMIGOS Team Board</option>
+           <option>Vz-DTG Intel BYOD Porting Board</option>
+           <option>Dublin_Team3_NR</option>
+           <option>FlexRAN Team Board</option>
+           <option>TeNBPlus (Time Tracking) Board</option>
+           <option>LMCO-UESim-Dev-Team-1</option>
+           <option>TDE-2K Customer Focus Board</option>
+           <option>TENBPLUS Board</option>
+           <option>Copy of TeNB_QCOM_Board</option>
+           <option>ME DV Sustenance</option>
+           <option>3.1 DV</option>
+           <option>TeNB+ eICIC and Octasic Team Board</option>
+           <option>3.1 Overall</option>
+           <option>IOTians (Time Tracking) Board</option>
+       </select>
+       <br>
+       <br>
+       <label>OR</label>
+       <br>
+       <br>
+    <label>Start TAG</label>
+    <input type="text" name="tag1" value="" onpaste="return true">
+    &emsp;
+    <label>End TAG</label>
+    <input type="text" name="tag2" value="" onpaste="return true">
+    <br>
+    <br>
+    <input type="submit" value="Get Charts">
+    <br>
+   </form> 
+ </fieldset>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+{% endblock %}

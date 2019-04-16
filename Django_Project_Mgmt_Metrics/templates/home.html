@@ -1,0 +1,71 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+
+<br><br>
+<div class="container">
+  <fieldset>
+  <br>
+  <legend>Get Metrics Tables</legend>
+
+    <form name="form" method="post" action="submit"> {% csrf_token %}
+       <label>Select BU</label>
+       <select id=id_bu name="bu">
+           <option>BU1</option>
+           <option>BU2</option>
+           <option>BU3</option>
+           <option>BU4</option>
+		<option>BU5</option>
+       </select>
+       &emsp;
+       <label>Select Project</label>
+       <select id=id_project name="project">
+           <option>PROJECT1</option>
+           <option>PROJECT2</option>
+           <option>PROJECT3</option>
+           <option>PROJECT4</option>
+           <option>PROJECT5</option>
+           <option>PROJECT6</option>
+	   <option>PROJECT7</option>
+       </select>
+       <br><br>
+       <label>Please Select either Board or Start and End TAG</label>
+       <br> 
+       <br> 
+       <label>Select Board</label>
+       <select id=id_board name=board>
+           <option></option>
+           <option>Board1</option>
+           <option>Board2</option>
+           <option>Board3</option>
+           <option>Board4</option>
+           <option>Board5</option>
+           <option>Board6</option>
+           <option>Board7</option>
+           <option>Board8</option>
+           <option>Board9</option>
+           <option>Board10</option>
+       </select>
+       <br>
+       <br>
+       <label>OR</label>
+       <br>
+       <br>
+    <label>Start TAG</label>
+    <input type="text" name="tag1" value="" onpaste="return true">
+    &emsp;
+    <label>End TAG</label>
+    <input type="text" name="tag2" value="" onpaste="return true">
+    <br>
+    <br>
+    <input type="submit" value="Get Metrices">
+    <br>
+   </form> 
+ </fieldset>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+{% endblock %}
