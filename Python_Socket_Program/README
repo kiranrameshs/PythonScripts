@@ -1,0 +1,4 @@
+README
+BASIC SOCKET PROGRAM in python to send basic data from client to server
+run server first using the command python serv.python
+then run the client using the command python cli.py 
