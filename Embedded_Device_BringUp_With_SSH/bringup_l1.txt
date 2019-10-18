@@ -1,0 +1,18 @@
+set timeout 20
+set IP [lindex $argv 0]
+set username [lindex $argv 1]
+set password [lindex $argv 2]
+
+spawn ssh -o StrictHostKeyChecking=no $username@$IP
+sleep 2
+expect "$username@$IP's password:"
+send "$password\r"
+expect "#"
+sleep 2
+send "clear \r"
+expect "#"
+send "cd rct_3844 \r"
+expect "#"
+sleep 2
+send "./l1_master.sh\r"
+interact
