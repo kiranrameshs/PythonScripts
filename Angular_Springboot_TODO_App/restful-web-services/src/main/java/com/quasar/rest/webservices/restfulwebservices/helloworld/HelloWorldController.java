@@ -1,4 +1,4 @@
-package com.quasar.rest.webservices.restfulwebservices;
+package com.quasar.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200")

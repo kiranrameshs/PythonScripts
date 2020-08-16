@@ -7,6 +7,7 @@ import { ListTodosComponent } from './list-todos/list-todos.component';
 import { LogoutComponent } from './logout/logout.component';
 import {RoutegaurdService} from './service/routegaurd.service'
 import { from } from 'rxjs';
+import { TodoComponent } from './todo/todo.component';
 
 //welcome
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'welcome/:name',component: WelcomeComponent, canActivate:[RoutegaurdService]},
   {path:'todos',component: ListTodosComponent,canActivate:[RoutegaurdService]},
   {path:'logout',component: LogoutComponent,canActivate:[RoutegaurdService]},
+  {path:'todos/:id',component: TodoComponent,canActivate:[RoutegaurdService]},
   {path:'**',component: ErrorComponent}
 
 ];
