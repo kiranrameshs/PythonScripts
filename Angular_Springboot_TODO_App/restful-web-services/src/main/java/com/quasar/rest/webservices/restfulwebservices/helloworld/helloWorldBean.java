@@ -1,4 +1,4 @@
-package com.quasar.rest.webservices.restfulwebservices;
+package com.quasar.rest.webservices.restfulwebservices.helloworld;
 
 public class helloWorldBean {
     private String message;
