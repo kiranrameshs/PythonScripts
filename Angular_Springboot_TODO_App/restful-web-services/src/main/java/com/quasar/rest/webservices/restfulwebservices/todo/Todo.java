@@ -18,6 +18,8 @@ public class Todo {
         Done = done;
     }
 
+    public Todo(){};
+
 
     public long getId() {
         return id;
