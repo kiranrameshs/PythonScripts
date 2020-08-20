@@ -1,4 +1,4 @@
-package com.quasar.rest.webservices.restfulwebservices.basic.auth;
+package com.quasar.rest.basic.auth;
 
 public class AuthenticationBean {
     private String message;

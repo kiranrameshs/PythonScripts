@@ -10,7 +10,7 @@ export class ErrorComponent implements OnInit {
   errorMessage = 'An error occurred, contact support'
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

@@ -18,7 +18,8 @@ export class Todo{
   styleUrls: ['./list-todos.component.css']
 })
 export class ListTodosComponent implements OnInit {
-  todos=[];
+
+  todos: Todo[]
 
   message: string;
   // todos=[
@@ -46,7 +47,7 @@ export class ListTodosComponent implements OnInit {
   refreshTodos() {
     this.todoservice.retrieveAllTodos('kiran').subscribe(
       response => {
-        console.log(response)
+        console.log(response);
         this.todos = response;
       }
     )

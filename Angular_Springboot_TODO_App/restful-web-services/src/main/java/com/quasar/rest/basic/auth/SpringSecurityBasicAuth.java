@@ -1,4 +1,4 @@
-package com.quasar.rest.webservices.restfulwebservices.basic.auth;
+package com.quasar.rest.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

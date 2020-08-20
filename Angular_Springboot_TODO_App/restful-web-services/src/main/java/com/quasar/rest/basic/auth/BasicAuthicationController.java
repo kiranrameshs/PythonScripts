@@ -1,4 +1,4 @@
-package com.quasar.rest.webservices.restfulwebservices.basic.auth;
+package com.quasar.rest.basic.auth;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
