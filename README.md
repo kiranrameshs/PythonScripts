@@ -1,6 +1,6 @@
-Repository for all personal projects - **QUASAR**
+Repository for all personal projects
 
-Project Full Stack User Task Management App on Angular and Spring Boot
+**Project Full Stack User Task Management App on Angular and Spring Boot**
 Header (API test)
 Origin - http://localhost:4200
 Content-Type - application/json
