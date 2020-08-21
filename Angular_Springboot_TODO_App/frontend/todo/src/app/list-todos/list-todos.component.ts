@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TodoDataService} from '../service/data/todo-data.service'
 import { Router } from '@angular/router';
+import { BasicAuthenticationService } from '../service/basic-authentication.service';
 
 export class Todo{
   constructor(
@@ -22,30 +23,20 @@ export class ListTodosComponent implements OnInit {
   todos: Todo[]
 
   message: string;
-  // todos=[
-  //   {id: 1,description: 'Learn to dance'},
-  //   {id: 2,description: 'Learn Angular'}
-  // ]
+  username: string;
 
-  // todos=[
-  //   new Todo(1,'Learn to dance',false, new Date()),
-  //   new Todo(2,'Learn Angular',false, new Date()),
-  //   new Todo(3,'Learn JavaScript',false, new Date())
-  // ]
-
-  // todo = {
-  //   id: 1,
-  //   description: 'Learn to dance'
-  // }
   constructor(private todoservice: TodoDataService,
-    private router: Router) { }
+    private router: Router,
+    private basicAuthenticationService: BasicAuthenticationService) { }
 
   ngOnInit() {
+    this.username = this.basicAuthenticationService.getAuthenticatedUser()
     this.refreshTodos();
+    console.log('username in list-todos is '+this.username)
   }
 
   refreshTodos() {
-    this.todoservice.retrieveAllTodos('kiran').subscribe(
+    this.todoservice.retrieveAllTodos(this.username).subscribe(
       response => {
         console.log(response);
         this.todos = response;
@@ -54,7 +45,7 @@ export class ListTodosComponent implements OnInit {
   }
 
   handleDeleteTodo(id){
-    this.todoservice.deleteTodo('kiran',id).subscribe(
+    this.todoservice.deleteTodo(this.username,id).subscribe(
       response => {
         console.log(response);
         this.message = `Delete of ${id} Successful`;

@@ -1,17 +1,25 @@
 import { API_URL } from './../app.constants';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 export const TOKEN = 'token'
-export const AUTHENTICATED_USER = 'authenticaterUser'
+export const AUTHENTICATED_USER = 'authenticateUser'
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasicAuthenticationService {
+  
+  
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem(AUTHENTICATED_USER)
+    return !(user === null)
+  }
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router,
+    private http: HttpClient) { }
 
   executeJWTAuthenticationService(username, password) {
     
@@ -29,31 +37,8 @@ export class BasicAuthenticationService {
           }
         )
       );
-    //console.log("Execute Hello World Bean Service")
   }
 
-
-  executeAuthenticationService(username, password) {
-    
-    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
-
-    let headers = new HttpHeaders({
-        Authorization: basicAuthHeaderString
-      })
-
-    return this.http.get<AuthenticationBean>(
-      `${API_URL}/basicauth`,
-      {headers}).pipe(
-        map(
-          data => {
-            sessionStorage.setItem(AUTHENTICATED_USER, username);
-            sessionStorage.setItem(TOKEN, basicAuthHeaderString);
-            return data;
-          }
-        )
-      );
-    //console.log("Execute Hello World Bean Service")
-  }
 
   getAuthenticatedUser() {
     return sessionStorage.getItem(AUTHENTICATED_USER)
@@ -64,14 +49,12 @@ export class BasicAuthenticationService {
       return sessionStorage.getItem(TOKEN)
   }
 
-  isUserLoggedIn() {
-    let user = sessionStorage.getItem(AUTHENTICATED_USER)
-    return !(user === null)
-  }
 
   logout(){
+    console.log('Logging out')
     sessionStorage.removeItem(AUTHENTICATED_USER)
     sessionStorage.removeItem(TOKEN)
+    this.router.navigate(['logout'])
   }
 
 }

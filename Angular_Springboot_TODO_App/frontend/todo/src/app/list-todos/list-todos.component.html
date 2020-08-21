@@ -1,9 +1,9 @@
-<h1>My Todos</h1>
+<h1>My Todo List</h1>
 
 <div class="alert alert-success" *ngIf='message'>{{message}}</div>
 <div class="container">
 <table class="table">
-    <caption>My Todos</caption>
+    <!-- <caption>My Todos</caption> -->
     <thead>
         <tr>
             <th>Description</th>
@@ -15,7 +15,6 @@
     </thead>
     <tbody>
         <tr *ngFor="let todo of todos">
-            <!-- <td>{{todo.id}}</td> -->
             <td>{{todo.description}}</td>
             <td>{{todo.targetDate | date | uppercase}}</td>
             <td>{{todo.done}}</td>

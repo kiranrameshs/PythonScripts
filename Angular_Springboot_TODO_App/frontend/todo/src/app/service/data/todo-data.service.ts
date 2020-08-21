@@ -15,15 +15,18 @@ export class TodoDataService {
   constructor(private http: HttpClient) { }
 
   retrieveAllTodos(username){
+    console.log('username in data service is  '+username);
     return this.http.get<Todo[]>(`${JPA_API_URL}/users/${username}/todos`);
 
   }
 
   deleteTodo(username,id){
+    // console.log('username in data service is  '+username);
     return this.http.delete(`${JPA_API_URL}/users/${username}/todos/${id}`)
   }
 
   retrieveTodo(username,id){
+    console.log('username in data service is  '+username);
     return this.http.get<Todo>(`${JPA_API_URL}/users/${username}/todos/${id}`)
   }
 
